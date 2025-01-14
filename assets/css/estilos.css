@@ -1,0 +1,333 @@
+* {
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    background-image: url("../images/Cover/fondo2.jpg");
+    background-repeat: repeat-y;
+    background-size: 100%; /* Asegura que la imagen cubra toda la página */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding-top: 100px;
+}
+
+:root {
+    --color_text-primary: #298fca;
+}
+
+header{
+    background-color: #000000;
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    z-index: 100;
+    top: 0; /* Se asegura que comienza en la parte superior */
+    transition: top 0.3s; /* Transición suave para el movimiento */
+    color:#298fca;
+}
+
+.container__header{
+    background-color: #000000;
+    max-width: 1200px;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.logo img{
+    width: 80px;
+}
+
+.menu{
+    display: flex;
+    align-items: center;
+}
+
+.menu nav{
+    margin: 0px 20px;
+}
+
+.menu nav ul{
+    display: flex;
+}
+
+.menu nav ul li{
+    list-style: none;
+    margin: 20px 16px;
+}
+
+.menu nav ul li a{
+    color: var(--color_text-secundary);
+    font-size: var(--lowText_font_size);
+    position: relative;
+}
+
+.menu nav ul li a:hover{
+    color: var(--color_text-primary);
+}
+
+.btn__quote{
+    display: block;
+    padding: 8px 40px;
+    border: 2px solid var(--main_color-primary);
+    border-radius: 8px;
+    font-weight: 500;
+    margin: 0px 20px;
+    transition: all 300ms;
+}
+
+.btn__quote:hover{
+    color: white;
+    background: var(--main_color-primary);
+}
+
+/* Estilos para el botón de menú */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    height: 3px;
+    width: 25px;
+    background-color: #298fca;
+    margin: 4px 0;
+}
+
+/* Agregamos media query para pantallas pequeñas */
+@media (max-width: 768px) {
+    .menu nav {
+        display: none; /* Ocultamos el nav por defecto */
+    }
+
+    .menu nav.active {
+        display: flex; /* Mostramos el nav cuando tiene clase active */
+        flex-direction: column; /* Cambiamos a columna para el menú */
+        position: absolute; /* Posicionamos el menú automáticamente */
+        top: 100%; /* Lo alineamos justo debajo del header */
+        left: 0;
+        right: 0;
+        background-color: #000000; /* Fondo negro */
+        z-index: 99;
+        padding: 20px 0; /* Agregar algo de relleno */
+    }
+
+    .menu-toggle {
+        display: flex; /* Mostramos el botón de menú */
+    }
+
+    .menu nav ul {
+        flex-direction: column; /* En columnas en lugar de filas */
+        align-items: center; /* Alineamos los items al centro */
+        width: 100%; /* Hacemos que el ancho del menú sea del 100% */
+        padding: 0; /* Reseteamos el padding */
+    }
+
+    .menu nav ul li {
+        margin: 10px 0; /* Espacio entre los elementos */
+    }
+}
+
+.opciones {
+    text-align: center;
+    margin: 50px auto;
+}
+
+.opciones nav ul {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+
+.filter-table {
+    display: inline-block;
+    padding: 80px; 
+    border-radius: 10px;
+    border: 1px solid #e6e6e6;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.filter-table li {
+    display: inline;
+    margin: 0 20px;
+}
+
+.filter-table a {
+    color: rgb(16, 219, 145);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 16px 24px;
+    border-radius: 5px;
+    font-size: 20px;
+    transition: transform 0.3s, color 0.3s, background-color 0.3s;
+}
+
+.filter-table a:hover {
+    color: white;
+    background-color: rgb(16, 189, 219);
+}
+
+/*planes*/
+
+.container__trust {
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+.container__box-Primary {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.box__card-primary {
+    max-width: 350px;
+    padding: 60px 40px;
+    border: 1px solid #e6e6e6;
+    border-radius: 20px;
+    margin: 14px;
+    transition: all 300ms;
+    box-shadow: 0 4px 20px rgba(19, 106, 236, 0.737);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.box__card-primary:hover {
+    border-radius: 8px;
+}
+
+.card__trust {
+    background: #f9f9f9;
+    box-shadow: 0 4px 30px rgb(6, 245, 237);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.card__trust img {
+    width: 100%;
+    height: auto;
+}
+
+.card__trust h2 {
+    font-size: 1.5em;
+    margin-top: 10px;
+}
+
+.card__trust p {
+    margin-top: 5px;
+}
+
+/* Animaciones según cada tipo de gala */
+.gala-oros:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 40px rgba(245, 215, 0, 0.6);
+}
+
+.gala-plata:hover {
+    transform: rotate(3deg);
+    box-shadow: 0 8px 40px rgba(192, 192, 192, 0.6);
+}
+
+.gala-bronce:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 40px rgba(205, 127, 50, 0.6);
+}
+
+.gala-basico:hover {
+    opacity: 0.9;
+    box-shadow: 0 8px 40px rgba(100, 100, 100, 0.6);
+}
+
+
+
+/* Tarjetas de servicios */
+.service-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.service-card {
+    position: relative;
+    width: 220px; /* Ancho de la tarjeta */
+    height: 250px; /* Alto de la tarjeta */
+    perspective: 1000px;
+}
+
+.card-inner {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.card-inner:hover {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-front {
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-back {
+    background: #f5f5f5;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-back p {
+    padding: 8px;
+    text-align: center;
+}
+
+.service-card img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+.service-icon {
+    font-size: 40px; /* Tamaño del icono */
+    color: var(--color_text-primary); /* Color del icono */
+    margin-bottom: 10px;
+}
+

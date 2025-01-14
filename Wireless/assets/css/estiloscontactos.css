@@ -1,0 +1,505 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #000000;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+nav{
+    background: #000000;
+    height: 80px;
+    width: 100%;
+}
+.enlace{
+    position: absolute;
+    padding: 20px 50px;
+}
+.logo{
+    height: 40px;
+}
+nav ul{
+    float: right;
+    margin-right: 20px;
+}
+nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+}
+nav ul li a{
+    color: #298fca;
+    font-size: 18px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+li a.active, li a:hover{
+    background: #ffffff;
+    transition: .5s;
+}
+.checkbtn{
+    font-size: 30px;
+    color: #fff;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+#check{
+    display: none;
+}
+
+@media (max-width: 952px){
+    .enlace{
+        padding-left: 20px;
+    }
+    nav ul li a{
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 858px){
+    .checkbtn{
+        display: block;
+    }
+    ul{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #2c3e50;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+    nav ul li{
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+    nav ul li a{
+        font-size: 20px;
+    }
+    li a:hover, li a.active{
+        background: none;
+        color: #298fca;
+    }
+    #check:checked ~ ul{
+        left:0;
+    }
+}
+
+.contact-section {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgb(0, 30, 99); 
+}
+
+.contact-section:hover {
+    box-shadow: 0 10px 30px rgb(5, 200, 234);
+}
+
+h2 {
+    color: #283593;
+}
+
+.info-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.contact-info {
+    flex: 2;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.info-item1 {
+    font-size: 24px;
+    color: #1a237e; /* Cambiado a azul */
+    margin-right: 10px;
+    transition: color 0.3s;
+}
+
+.info-item2 {
+    font-size: 24px;
+    color: #06ae41; /* Cambiado a azul */
+    margin-right: 10px;
+    transition: color 0.3s;
+}
+
+.info-item1:hover, .info-item2:hover {
+    color: #283593; /* Azul rey al pasar el puntero */
+}
+
+.centered-title {
+    text-align: center;
+}
+
+.slider {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.responsive-img {
+    width: 100%;
+    height: auto;
+    border-radius: 13px;
+}
+
+.hide {
+    display: none;
+}
+
+.info-communication {
+    border: 1px solid #ccc; /* Border alrededor del cuadro */
+    padding: 15px; /* Espaciado interno */
+    margin-top: 10px; /* Espacio superior */
+    background-color: #f9f9f9; /* Color de fondo */
+    overflow: auto; /* Permite el desbordamiento del contenido */
+}
+
+button.prev,
+button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    font-size: 60px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+button.prev {
+    left: 10px;
+}
+
+button.next {
+    right: 10px;
+}
+
+.image-container {
+    flex: 1;
+}
+
+.message-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.info-btn {
+    background-color: #283593;
+    color: #283593;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+.info-btn:hover {
+    background-color: #2dcefb;
+}
+
+.info-communication {
+    margin-top: 20px;
+    background: rgba(240, 240, 240, 0.8);
+    padding: 15px;
+    border-radius: 8px;
+}
+
+label {
+    margin-bottom: 5px;
+    display: block;
+    color: #555;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    border-color: #283593;
+    outline: none;
+}
+
+.submit-btn {
+    background-color: #2dfb6e;
+    color: #283593;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #2dcefb;
+}
+
+.cardm {
+    background: white;
+    border-radius: 12px; 
+    box-shadow: 0 4px 10px rgb(0, 30, 99); /* Sombra fija */
+    overflow: hidden;
+    width: 80%; 
+    max-width: 900px; 
+    display: flex;
+    margin: 40px auto; 
+    transition: box-shadow 0.3s ease; /* Animación para la sombra */
+}
+
+.cardm:hover {
+    box-shadow: 0 8px 20px rgb(5, 200, 234); /* Sombra hover */
+}
+
+/* Estilos del Mapa */
+.map {
+    flex: 70%;
+    padding: 20px; 
+    text-align: center; 
+    background: #f9f9f9; 
+    position: relative;
+}
+
+.map img {
+    max-width: 100%; 
+    height: auto; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 20px rgba(21, 15, 203, 0.842); 
+    border: 5px solid #12faea;
+}
+
+.options {
+    flex: 30%;
+    padding: 20px; 
+    border-left: 2px solid #dedede; 
+    background-color: #ffffff; 
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave en la caja */
+    transition: box-shadow 0.3s ease; /* Animación para la sombra */
+}
+
+.options:hover {
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.772); /* Sombra hover */
+}
+
+/* Estilo para el selector de estados */
+#state-selector {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border 0.3s;
+}
+
+#state-selector:focus {
+    border-color: #283593;
+    outline: none;
+}
+
+/* Estilo para las opciones de zonas */
+#zones {
+    margin-top: 15px; 
+}
+
+#zones ul {
+    list-style-type: none; 
+    padding: 0; 
+}
+
+#zones li {
+    background: #f2f2f2; 
+    margin: 5px 0; 
+    padding: 12px; 
+    border-radius: 5px; 
+    transition: background 0.3s, transform 0.3s; /* Transiciones */
+}
+
+#zones li:hover {
+    background: #e0e0e0; 
+    transform: translateY(-2px); /* Efecto de elevación */
+}
+
+/* Contactos */
+
+footer {
+    background-color: #000000; /* Color de fondo */
+    color: #ecf0f1; /* Color de texto */
+    padding: 20px 0; /* Espaciado superior e inferior */
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between; /* Espacio entre el logo y los íconos*/
+    align-items: center; /* Alinear verticalmente */
+    max-width: 1200px; /* Ancho máximo del footer */
+    margin: 0 auto; /* Centrar el footer */
+    padding: 0 20px; /* Espaciado lateral */
+}
+
+.footer-logo img {
+    margin-bottom: 0; /* Se eliminó el margen inferior */
+    width: 60px;
+}
+
+.footer-text {
+    text-align: center; /* Centramos el texto */
+    flex-grow: 1; /* Permite que el texto ocupe el espacio disponible */
+    margin: 0 20px; /* Margen lateral */
+}
+
+.footer-text p {
+    margin: 5px 0; /* Margen entre párrafos */
+}
+
+.footer-text small {
+    display: block; /* Ayuda a que el pequeño se coloque en una nueva línea */
+    margin-top: 5px;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 15px; /* Espacio entre íconos */
+}
+
+.footer-socials a {
+    color: #ecf0f1; /* Color de los iconos */
+    font-size: 1.5rem; /* Tamaño de los iconos */
+    transition: color 0.3s; /* Transición suave al cambiar de color */
+}
+
+.footer-socials a:hover {
+    color: #3498db; /* Color al pasar el mouse */
+}
+
+h6 {
+    margin-top: 15px; /* Margin superior para el copyright */
+    font-size: 0.8rem; /* Tamaño de fuente más pequeño */
+}
+
+/* Estilos del modal */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.9); 
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%; 
+    max-height: 90%;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+/* Estilos de las zonas */
+#zones {
+    margin-top: 15px; 
+}
+
+#zones ul {
+    list-style-type: none; 
+    padding: 0; 
+}
+
+.footer-socials a {
+    color: white;
+    margin-right: 15px;
+    transition: transform 0.3s;
+}
+
+.footer-socials a:hover {
+    transform: scale(1.1);
+}
+
+.zones-container {
+    margin-top: 15px; 
+    padding: 10px;
+    border: 1px solid #0eff5e; /* Bordes del contenedor */
+    border-radius: 8px; /* Bordes redondeados */
+    background-color: #f8f8f8; /* Fondo suave */
+}
+
+.zone-item {
+    background: #74fdb6; /* Fondo verde suave */
+    margin: 5px 0; 
+    padding: 12px; 
+    border-radius: 5px; 
+    display: flex; /* Incluye Flexbox para alinear icono y texto */
+    align-items: center; /* Centra verticalmente */
+    transition: background 0.3s; /* Transición suave para el hover */
+}
+
+.zone-item i {
+    margin-right: 10px; /* Espacio entre el ícono y el texto */
+    color: #de003b; /* Color del ícono */
+}
+
+.zone-item:hover {
+    background: #04eb73; /* Cambia el color al pasar el puntero */
+}
+

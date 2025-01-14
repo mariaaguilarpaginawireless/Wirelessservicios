@@ -1,0 +1,504 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --color_text-primary: #298fca;
+    --color_text-secundary: #298fca;
+    --color_text-tertiary: #ffffff;
+    --main_color-primary: #298fca;
+    --main_color-secundary: #f7f7f7;
+    --background-color: #000000;
+    --lowText_font_size: 16px;
+    --text_size_title: 40px;
+    --text_title_card: 24px;
+    --text_title_cardv2: 20px;
+    --text_paragraph: 16px;
+    --box_shadow-primary: 0px 6px 50px -20px rgba(0,0,0,0.2);
+}
+
+body {
+    color: white;
+    background-color: #000000;
+}
+
+nav {
+    background: #000000;
+    height: 80px;
+    width: 100%;
+}
+.enlace {
+    position: absolute;
+    padding: 20px 50px;
+}
+.logo {
+    height: 40px;
+}
+nav ul {
+    float: right;
+    margin-right: 20px;
+}
+nav ul li {
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+}
+nav ul li a {
+    color: #298fca;
+    font-size: 18px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+li a.active, li a:hover {
+    background: #ffffff;
+    transition: .5s;
+}
+.checkbtn {
+    font-size: 30px;
+    color: #ffffff;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+#check {
+    display: none;
+}
+
+.container__cover {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    position: relative; /* Cambia la posición a relativa */
+    background: url('../images/Cover/inicio.jpg') no-repeat center; 
+    background-size: cover;
+}
+
+.cover {
+    max-width: 1100px;
+    margin: auto;  
+    top: -20px; /* Ajusta este valor para mover el contenedor hacia arriba */
+    display: flex;  
+    align-items: center;  
+    padding: 0px 20px;  
+    background: rgba(255, 255, 255, 0.1); /* Fondo blanco semi-transparente para el contenido */
+}
+
+.text__cover {
+    width: 100%;
+    padding-right: 150px;
+}
+
+.text__cover h1 {
+    font-size: 50px;
+    color: #ffffff; 
+}
+
+.image__cover {
+    width: 100%;
+}
+.image__cover img {
+    width: 500px;
+    height: 350px;
+    border-radius: 10px;
+    box-shadow: var(--box_shadow-primary);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image__cover img:hover {
+    transform: scale(1.05);
+    box-shadow: var(--box_shadow-primary-hover, rgba(0, 0, 0, 0.3) 0px 4px 20px);
+}
+
+@media (max-width: 952px){
+    .enlace{
+        padding-left: 20px;
+    }
+    nav ul li a {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 858px){
+    .checkbtn {
+        display: block;
+    }
+    ul {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: rgba(44, 62, 80, 0.9); /* Fondo oscuro semi-transparente */
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+        z-index: 10; /* Asegúrate de que esté por encima del contenido */
+    }
+    nav ul li {
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+    nav ul li a {
+        font-size: 20px;
+    }
+    li a:hover, li a.active {
+        background: none;
+        color: #298fca;
+    }
+    #check:checked ~ ul {
+        left: 0;
+    }
+}
+
+/* Media Query para pantallas más pequeñas */
+@media (max-width: 1200px) {
+    .cover {
+        flex-direction: column; /* Cambia a columna para contenido más pequeño */
+        padding: 0 10px; /* Disminuye el padding horizontal */
+    }
+
+    .text__cover {
+        padding-right: 0; /* Elimina el padding derecho */
+        text-align: center; /* Centra el texto para pantallas pequeñas */
+    }
+
+    .text__cover h1 {
+        font-size: 40px; /* Reduce el tamaño de la fuente */
+    }
+
+    .text__cover p {
+        font-size: 16px; /* Ajusta el tamaño del párrafo */
+    }
+
+    .btn__text {
+        width: 100%; /* Hace que el botón ocupe toda la línea */
+        margin-top: 20px; /* Reduce el margen superior */
+    }
+
+    .image__cover img {
+        width: 90%; /* Establece un ancho del 90% en pantallas más pequeñas */
+        height: auto; /* Permite que la altura se ajuste automáticamente */
+    }
+}
+
+/* Media Query para dispositivos móviles */
+@media (max-width: 768px) {
+    .text__cover h1 {
+        font-size: 30px; /* Reduce aún más el tamaño en móviles */
+    }
+
+    .text__cover p {
+        font-size: 14px; /* Disminuye el tamaño del párrafo */
+        margin-top: 20px; /* Ajusta el margen superior */
+    }
+
+    .image__cover img {
+        width: 100%; /* Hace que la imagen ocupe todo el ancho del contenedor */
+    }
+
+    .btn__text {
+        padding: 10px; /* Ajusta padding del botón */
+    }
+}
+
+/*Estilos generales CARDS*/
+
+.container__card-primary {
+    padding-top: 100px;
+}
+
+.card__primary {
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+    padding: 0px 20px;
+}
+
+.text__card-primary {
+    max-width: 800px;
+    margin: auto;
+}
+
+.text__card-primary p {
+    color: var(--color_text-primary);
+    letter-spacing: 4px;
+    font-size: var(--text_paragraph);
+    font-weight: 500;
+}
+
+.text__card-primary h1 {
+    font-size: var(--text_size_title);
+    font-weight: 600;
+    color: var(--color_text-secundary);
+}
+
+.container__box-cardPrimary {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.box__card-primary {
+    max-width: 350px;
+    padding: 60px 40px;
+    border: 1px solid #e6e6e6;
+    border-radius: 20px;
+    margin: 14px;
+    transition: all 300ms;
+    box-shadow: 0 4px 20px rgba(8, 197, 255, 0.7); /* Sombra morada */
+}
+
+.box__card-primary:hover {
+    box-shadow: 0 8px 30px rgba(5, 131, 234, 0.9); /* Sombra más intensa al pasar el mouse */
+    border-radius: 8px; /* Bordes redondeados */
+    transition: box-shadow 0.3s ease, border-radius 0.3s ease; /* Transición suave para el efecto hover */
+}
+
+.box__card-primary h2 {
+    font-size: var(--text_title_card);
+    margin-top: 40px;
+    font-weight: 500;
+}
+
+.box__card-primary p {
+    margin-top: 20px;
+}
+
+/* Ajustes para los container de Trust Area */
+.container__trust {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Alineación superior */
+    margin-top: 40px; /* Añadir un margen superior para separación */
+}
+
+.container__trust .box__card-primary {
+    max-width: 250px; /* Tamaño más pequeño */
+    padding: 40px; /* Agrega más padding para que las tarjetas sean más gruesas */
+    transition: transform 0.3s ease; /* Añadido para suavizar el efecto de transformación */
+    position: relative; /* Añadir posición relativa para poder usar el z-index */
+    margin: 0 10px; /* Espacer las tarjetas */
+}
+
+.container__trust .box__card-primary:nth-child(1) { 
+    transform: translateY(20px); /* Mueve ligeramente hacia abajo */
+    z-index: 0; /* Fondo */
+}
+
+.container__trust .box__card-primary:nth-child(2) { 
+    transform: translateY(-10px); /* Central, un poco más arriba */
+    z-index: 5; /* Más alto en la pila */
+}
+
+.container__trust .box__card-primary:nth-child(3) { 
+    transform: translateY(20px); /* Mueve ligeramente hacia abajo */
+    z-index: 0; /* Fondo */
+}
+
+/* Opcional: Hover effect para contenedores de los lados */
+.container__trust .box__card-primary:hover {
+    transform: scale(1.05); /* Escala el contenedor al pasar el mouse */
+}
+
+/* Ajustes generales de box__card-primary para el hover */
+.box__card-primary {
+    transition: all 300ms; /* Mantiene la transición para el efecto hover */
+    box-shadow: 0 4px 20px rgb(0, 81, 255); /* Sombra morada */
+}
+
+/* Hover state */
+.box__card-primary:hover {
+    box-shadow: 0 8px 30px rgba(5, 234, 230, 0.9); /* Sombra más intensa al pasar el mouse */
+    border-radius: 8px; /* Bordes redondeados */
+    transition: box-shadow 0.3s ease, border-radius 0.3s ease; /* Transición suave para el efecto hover */
+}
+
+/*Sobre nosotros*/
+
+.container__about {
+    padding: 100px 0px;
+    background: var(--background-color);
+    margin-top: 100px;
+}
+
+.about {
+    max-width: 1000px;
+    margin: auto;
+    padding: 0px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.text__about {
+    width: 100%;
+    padding-right: 40px;
+}
+
+.text__about h1 {
+    color: var(--color_text-secundary);
+    font-weight: 600;
+}
+
+.text__about p {
+    font-size: var(--text_paragraph);
+    margin-top: 40px;
+    color: var(--color_text-tertiary);
+}
+
+.image__about {
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /* Esto separa las imágenes */
+}
+
+.image__about img {
+    width: 350px; /* Cambia de 300px a 250px para hacer las imágenes más pequeñas */
+    height: 230px;
+    margin-right: 20px; /* Añadir margen derecho para la separación */
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+.image__about img:last-child {
+    margin-right: 0; /* Sin margen en la última imagen */
+}
+
+/* Media Queries para responsividad */
+@media (max-width: 1024px) {
+    .text__about {
+        padding-right: 20px; /* Reduce el padding en pantallas más pequeñas */
+    }
+
+    .image__about img {
+        width: 250px; /* Ajustar el ancho de las imágenes en pantallas más pequeñas */
+        height: auto; /* Asegurar que la altura sea proporcional al ancho */
+        margin-bottom: 20px; /* Añadir margen inferior para separación entre filas */
+    }
+}
+
+@media (max-width: 768px) {
+    .about {
+        flex-direction: column; /* Cambia la dirección del flex a columnas para móviles */
+        align-items: flex-start; /* Alinear el contenido a la izquierda */
+    }
+
+    .text__about {
+        padding-right: 0; /* Quitar el padding derecho */
+        padding-bottom: 20px; /* Añadir algo de padding en la parte inferior */
+    }
+
+    .image__about {
+        justify-content: center; /* Centrar las imágenes */
+    }
+
+    .image__about img {
+        width: 100%; /* Hacer que las imágenes ocupen el 100% del contenedor */
+        max-width: 300px; /* Limitar el ancho máximo para que no sean demasiado grandes */
+    }
+}
+
+@media (max-width: 480px) {
+    .text__about h1 {
+        font-size: 24px; /* Ajustar el tamaño de fuente del encabezado */
+    }
+
+    .text__about p {
+        font-size: 16px; /* Ajustar el tamaño de fuente del párrafo */
+    }
+
+    .image__about img {
+        width: 100%; /* Hacer que las imágenes ocupen el 100% del contenedor */
+        max-width: 250px; /* Limitar el ancho máximo para mantenerlo en proporción */
+    }
+}
+
+/*Servicios*/
+
+.card__service img{
+    width: 50px;
+}
+
+.card__service i{
+    font-size: 24px;
+    margin-top: 20px;
+    cursor: pointer;
+    color: var(--color_text-primary);
+}
+
+@keyframes wavy {
+    0%, 100% {
+        text-shadow: 0 0 5px rgba(0,0,0,0.5);
+    }
+    50% {
+        text-shadow: 0 0 15px rgba(0,0,0,0.8);
+    }
+}
+
+.wavy-text {
+    display: inline-block;
+    animation: wavy 1s infinite;
+}
+
+footer {
+    background-color: #000000; /* Color de fondo */
+    color: #ecf0f1; /* Color de texto */
+    padding: 20px 0; /* Espaciado superior e inferior */
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between; /* Espacio entre el logo y los íconos*/
+    align-items: center; /* Alinear verticalmente */
+    max-width: 1200px; /* Ancho máximo del footer */
+    margin: 0 auto; /* Centrar el footer */
+    padding: 0 20px; /* Espaciado lateral */
+}
+
+.footer-logo img {
+    margin-bottom: 0; /* Se eliminó el margen inferior */
+    width: 60px;
+}
+
+.footer-text {
+    text-align: center; /* Centramos el texto */
+    flex-grow: 1; /* Permite que el texto ocupe el espacio disponible */
+    margin: 0 20px; /* Margen lateral */
+}
+
+.footer-text p {
+    margin: 5px 0; /* Margen entre párrafos */
+}
+
+.footer-text small {
+    display: block; /* Ayuda a que el pequeño se coloque en una nueva línea */
+    margin-top: 5px;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 15px; /* Espacio entre íconos */
+}
+
+.footer-socials a {
+    color: #ecf0f1; /* Color de los iconos */
+    font-size: 1.5rem; /* Tamaño de los iconos */
+    transition: color 0.3s; /* Transición suave al cambiar de color */
+}
+
+.footer-socials a:hover {
+    color: #3498db; /* Color al pasar el mouse */
+}
+
+h6 {
+    margin-top: 15px; /* Margin superior para el copyright */
+    font-size: 0.8rem; /* Tamaño de fuente más pequeño */
+}
